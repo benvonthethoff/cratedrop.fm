@@ -1,7 +1,6 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // Force a unique build each deploy so chunks never mismatch
+  generateBuildId: async () => String(Date.now()),
 };
-
-export default nextConfig;
+module.exports = nextConfig;
